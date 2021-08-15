@@ -8,12 +8,12 @@
 // console.log(fist, second);
 
 // Define a Function to declear deposit-input
-function getInputValue(){
-    const depositInputText = document.getElementById('deposit-input');
-    const depositInputValue = depositInputText.value;
-    const depositInput = parseFloat(depositInputValue);
-    depositInputText.value = '';
-    return depositInput;
+function getInputValue(inputId){
+    const inputField = document.getElementById(inputId);
+    const inputAmountText = inputField.value;
+    const amountValue = parseFloat(inputAmountText);
+    inputField.value = '';
+    return amountValue;
 }
 
 const depositBtn = document.getElementById('deposit-button').addEventListener('click',function(){
@@ -23,7 +23,7 @@ const depositBtn = document.getElementById('deposit-button').addEventListener('c
     const depositInputValue = depositInputText.value;
     const depositInput = parseFloat(depositInputValue); */
  
-    const depositInput = getInputValue();
+    const depositInput = getInputValue('deposit-input');
     // Deposit box value 
     const depositBoxText = document.getElementById('deposit-total');
     const depositBoxValue = depositBoxText.innerText;
@@ -53,9 +53,11 @@ const depositBtn = document.getElementById('deposit-button').addEventListener('c
 const withdrawBtn = document.getElementById('withdraw-button').addEventListener('click',function(){
 
     // withdraw Input
-    const withdrawInput = document.getElementById('withdraw-input');
+    /* const withdrawInput = document.getElementById('withdraw-input');
     const withdrawInputValueText = withdrawInput.value;
-    const withdrawInputValue = parseFloat(withdrawInputValueText);
+    const withdrawInputValue = parseFloat(withdrawInputValueText); */
+
+    const withdrawInputValue = getInputValue('withdraw-input')
 
     // Withdraw Total 
     const  withdrawTotal = document.getElementById('withdraw-total');
@@ -76,6 +78,6 @@ const withdrawBtn = document.getElementById('withdraw-button').addEventListener(
     totalBalance.innerText = totalWidthrawBalance; 
 
     // clear input data 
-    withdrawInput.value = '';
+    // withdrawInput.value = '';
 
 })
