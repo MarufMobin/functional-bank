@@ -7,13 +7,15 @@
 
 // console.log(fist, second);
 
-// Define a Function to declear deposit-input
+// Define a Function to declear inputs
 function getInputValue(inputId){
+
     const inputField = document.getElementById(inputId);
     const inputAmountText = inputField.value;
-    const amountValue = parseFloat(inputAmountText);
+    const inputAmount = parseFloat(inputAmountText);
     inputField.value = '';
-    return amountValue;
+    return inputAmount;
+
 }
 
 const depositBtn = document.getElementById('deposit-button').addEventListener('click',function(){
@@ -24,6 +26,7 @@ const depositBtn = document.getElementById('deposit-button').addEventListener('c
     const depositInput = parseFloat(depositInputValue); */
  
     const depositInput = getInputValue('deposit-input');
+
     // Deposit box value 
     const depositBoxText = document.getElementById('deposit-total');
     const depositBoxValue = depositBoxText.innerText;
@@ -37,10 +40,8 @@ const depositBtn = document.getElementById('deposit-button').addEventListener('c
     // Balence calculation
     const totalBalanceText = document.getElementById('balance-total');
     const totalBalance = totalBalanceText.innerText;
-    const totalBalanceAmount = parseFloat(totalBalance);
-    
+    const totalBalanceAmount = parseFloat(totalBalance); 
     const totalBalanceUpdates = totalBalanceAmount +  depositInput;
-
     totalBalanceText.innerText = totalBalanceUpdates;
 
     // clear input field
@@ -57,7 +58,7 @@ const withdrawBtn = document.getElementById('withdraw-button').addEventListener(
     const withdrawInputValueText = withdrawInput.value;
     const withdrawInputValue = parseFloat(withdrawInputValueText); */
 
-    const withdrawInputValue = getInputValue('withdraw-input')
+    const withdrawInputValue = getInputValue('withdraw-input');
 
     // Withdraw Total 
     const  withdrawTotal = document.getElementById('withdraw-total');
